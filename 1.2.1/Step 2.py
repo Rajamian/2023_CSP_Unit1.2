@@ -1,14 +1,12 @@
-import turtle as trtl
-spot = trtl.Turtle()
-
 
 # a121_catch_a_turtle.py
 #-----import statements-----
 import random as rand
-
+import turtle as trtl
 
 
 #-----game configuration----
+spot = trtl.Turtle()
 spot.shape("circle")
 spot.shapesize(5)
 spot.fillcolor("Red")
@@ -25,7 +23,6 @@ def spot_clicked(x, y):
 
 #-----events----------------
 spot.onclick(spot_clicked)
-
 
 wn = trtl.Screen()
 wn.mainloop()
