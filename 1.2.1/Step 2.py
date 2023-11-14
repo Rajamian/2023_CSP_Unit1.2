@@ -6,19 +6,37 @@ import turtle as trtl
 
 
 #-----game configuration----
+score = 0
+
+
+
+
+
+
+#-----initialize turtle-----
 spot = trtl.Turtle()
 spot.shape("circle")
 spot.shapesize(5)
 spot.fillcolor("Red")
 
-
-#-----initialize turtle-----
-
-
 #-----game functions--------
-spot_clicked = (5,10)
 def spot_clicked(x, y):
-    print("Spot was clicked!")
+    change_position()
+
+def change_position():
+    global spot
+    new_xpos = rand.randint(0, 400)
+    new_ypos = rand.randint(0, 400)
+    print(new_xpos)
+    print(new_ypos)
+    spot.penup()
+    spot.goto(new_xpos, new_ypos)
+
+def update_score():
+    global spot
+    score =+ 1
+    print("score")
+
 
 
 #-----events----------------
