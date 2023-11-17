@@ -8,9 +8,9 @@ import turtle as trtl
 #-----game configuration----
 score = 0
 
-font_setup = ("Arial",20,"normal")
+font_setup = ("Arial",50,"normal")
 
-timer = 30
+timer = 5
 counter_interval = 1000
 timer_up = False
 
@@ -25,13 +25,23 @@ spot.fillcolor("Red")
 
 score_writer = trtl.Turtle()
 score_writer.penup()
-score_writer.goto(300,-300)
+score_writer.goto(350,-350)
 score_writer.pendown()
 score_writer.hideturtle()
 counter =  trtl.Turtle()
+counter.penup()
+counter.goto(-350,-350)
+counter.pendown()
+counter.hideturtle()
 #-----game functions--------
 def spot_clicked(x, y):
-    change_position()
+    global timer_up
+    if timer_up == False:
+
+        change_position()
+    else:
+        counter.hideturtle()
+
 
 
 def change_position():
@@ -66,4 +76,5 @@ def countdown():
 spot.onclick(spot_clicked)
 
 wn = trtl.Screen()
+wn.ontimer(countdown, counter_interval)
 wn.mainloop()
