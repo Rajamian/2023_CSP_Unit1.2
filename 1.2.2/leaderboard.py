@@ -50,7 +50,7 @@ def get_scores(file_name):
             leader_score += line[index]
             index += 1
         # TODO 5: add the player score to the scores list
-        scores.append(leader_score)
+        scores.append(int(leader_score))
     leaderboard_file.close()
 
     # TODO 7: return the scores in place of the empty list
@@ -61,17 +61,18 @@ def get_scores(file_name):
 def update_leaderboard(file_name, leader_names, leader_scores, player_name, player_score):
     index = 0
     # TODO 8: loop through all the scores in the existing leaderboard list
-    '''
-    for   :
+    for index in range(len(leader_scores)):
+
       # TODO 9: check if this is the position to insert new score at
-      if ():
+      if (player_score > leader_scores[index]):
         break
       else:
         index = index + 1
-    '''
+
 
     # TODO 10: insert new player and score
-
+    leader_scores.insert(index, player_score)
+    leader_names.insert(index, player_name)
     # TODO 11: keep both lists at 5 elements only (top 5 players)
 
     # TODO 12: store the latest leaderboard back in the file
