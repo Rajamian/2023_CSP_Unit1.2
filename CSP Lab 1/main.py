@@ -28,10 +28,11 @@ def setupBox():
     box.forward(630)
     box.hideturtle()
 
-endX = (490,0)
-endY = (0,330)
-startX = (-490,0)
-startY = (0,-300)
+
+startX = -490
+startY = -300
+endX = 490
+endY = 330
 
 # Code for 80 point version goes here
 def v80():
@@ -39,9 +40,10 @@ def v80():
     lines.goto(-490, -300)
     lines.pendown()
 
-    for x in range(100):
-        lines.goto(endX,endY)
-        lines.goto(startX, startY)
+    for x in range(10):
+        lines.goto(startX,startY)
+        lines.goto(endX, endY)
+
         #change values of startX and endY here
 
 
@@ -72,6 +74,7 @@ def v110():
 
 setupScreen()
 setupBox()
+v110()
 
 
 
