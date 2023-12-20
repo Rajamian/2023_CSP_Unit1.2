@@ -20,17 +20,30 @@ maze_painter.pendown()
 
 
 '''
-
 maze_painter = trtl.Turtle()
 x = 10
 y = 20
+width = 10
 maze_painter.hideturtle()
 
+def draw_door():
+    maze_painter.forward(10)
+    maze_painter.penup()
+    maze_painter.forward(width * 2)
+    maze_painter.pendown()
+
+
 for walls in range(28):
-    maze_painter.left(90)
-    maze_painter.forward(x + y)
-    y += 10
+    if walls > 3:
+        maze_painter.speed(0)
+        maze_painter.left(90)
+        draw_door()
+        maze_painter.forward(x + y)
+        y += 10
 maze_painter.hideturtle()
+
+
+
 
 wn = trtl.Screen()
 wn.mainloop()
