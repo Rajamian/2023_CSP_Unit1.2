@@ -38,9 +38,17 @@ for walls in range(28):
         maze_painter.speed(0)
         maze_painter.left(90)
         draw_door()
-        maze_painter.forward(x + y)
+        maze_painter.forward(x + y - 30)
         y += 10
+        for barrier in range(2):
+            maze_painter.forward(40)
+            maze_painter.left(90)
+            maze_painter.forward(width * 2)
+            maze_painter.back(width * 2)
+            maze_painter.right(90)
 maze_painter.hideturtle()
+
+
 
 
 
