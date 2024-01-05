@@ -28,6 +28,7 @@ line.forward(600)
 
 #make x
 
+x_image = "x.gif"
 
 
 
