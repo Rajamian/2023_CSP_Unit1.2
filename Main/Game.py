@@ -25,6 +25,10 @@ line.goto(300,-125)
 line.pendown()
 line.right(180)
 line.forward(600)
+line.hideturtle()
+
+list = (1 , 2,3,4,5,6,7,8,9)
+
 
 #make x
 x_image = "TurtleImage.gif"
@@ -40,11 +44,33 @@ def draw_x(active_x):
   active_x.shape(x_image)
   wn.update()
 
-
-#-----function calls-----
 draw_x(x)
-
 wn.mainloop()
+
+
+#make an O
+o_image = "Opic.gif"
+
+wn = trtl.Screen()
+wn.setup(width=.5, height=.5)
+wn.addshape(o_image)
+
+o = trtl.Turtle()
+
+def draw_o(active_o):
+  active_o.shape(o_image)
+  wn.update()
+
+draw_o(o)
+wn.mainloop()
+
+
+
+
+
+
+
+
 
 
 
