@@ -1,13 +1,13 @@
 import random
-
 import turtle as trtl
 
-
-options = ("rock", "paper" ,"scissors")
+#Introduce the computer to the different options in rock,paper,scissors
+options = ("rock", "paper", "scissors")
 player = None
 computer = random.choice(options)
 playing = True
 
+#Generate a random choice from the computer and generate a choice as a player
 while playing:
 
     player = None
@@ -20,6 +20,7 @@ while playing:
     print(f"player: {player}")
     print(f"computer: {computer}")
 
+#This section of code is how the computer knows who wins
     if player == computer:
         print("Draw")
     elif player == "rock" and computer == "scissors":
@@ -36,13 +37,35 @@ while playing:
 
     print("Thanks for playing!")
 
-line = trtl.Turtle()
+#Create the visual aspect of the project
+visual = trtl.Turtle()
+#If player loses, draw a red x
+if player == "You lose!!":
+    visual.penup()
+    x_image = "Redx.gif"
+    wn = trtl.Screen()
+    wn.setup(width=2.0, height=2.0)
+    wn.addshape(x_image)
+    x = trtl.Turtle()
 
+    def draw_x(active_x):
+        active_x.shape(x_image)
+        wn.update()
+    draw_x(x)
+    wn.mainloop()
 
+#if player wins, draw a green checkmark
+if player == "Player wins!":
+    visual.penup()
+    check_image = "Checkmark.gif"
+    wn = trtl.Screen()
+    wn.setup(width=2, height=2)
+    wn.addshape(check_image)
+    check = trtl.Turtle()
 
+    def draw_check(active_check):
+      active_check.shape(check_image)
+      wn.update()
 
-
-
-wn = trtl.Screen()
-wn.mainloop()
-
+    draw_check(check)
+    wn.mainloop()
